@@ -4,7 +4,8 @@
     "react-app",
     "prettier",
     "prettier/flowtype",
-    "prettier/react"
+    "prettier/react",
+    "plugin:react-hooks/recommended"
   ],
   "rules": {
     // Allow jsx tags inside .js files.
