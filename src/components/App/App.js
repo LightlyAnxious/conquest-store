@@ -1,13 +1,15 @@
 import React from 'react';
-import Counter from '../Counter';
-import Random from '../Random';
-import classes from './App.module.css';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Main from 'components/Main/Main';
 
 const App = () => (
-  <div className={classes.container}>
-    <Counter />
-    <Random />
-  </div>
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/">
+        <Main />
+      </Route>
+    </Switch>
+  </BrowserRouter>
 );
 
 export default App;
