@@ -21,7 +21,10 @@ export default function useWindowSize() {
     );
 
     return () => {
-      debounce(changeWindowSize, debounceDelay);
+      window.removeEventListener(
+        'resize',
+        debounce(changeWindowSize, debounceDelay)
+      );
     };
   }, []);
 
