@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import FooterNav from 'components/FooterNav/FooterNav';
-
 import footerLogo from 'assets/images/footer-logo.svg';
+import FooterNav from './components/FooterNav/FooterNav';
+
 import classes from './PageFooter.module.css';
 
 const PageFooter = () => (

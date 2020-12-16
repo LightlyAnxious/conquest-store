@@ -1,5 +1,5 @@
 import React from 'react';
-import useWindowSize from 'utils/useWindowSize';
+import useWindowSize from 'hooks/useWindowSize';
 import {FooterNavSection, FooterNavTitle, Width} from 'const';
 import Accordion from 'components/Shared/Accordion';
 import NavSection from './components/NavSection';

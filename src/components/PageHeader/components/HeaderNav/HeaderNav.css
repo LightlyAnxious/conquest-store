@@ -1,0 +1,19 @@
+.menu--shown ~ .page-header__user-section {
+  margin-right: 39px;
+}
+
+.menu__list--shown {
+  animation: expand 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes expand {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
