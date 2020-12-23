@@ -10,6 +10,8 @@
   "rules": {
     // Allow jsx tags inside .js files.
     "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+    // Disable defaultProps in functional components
+    "react/require-default-props": [1, { "forbidDefaultForRequired": false, "ignoreFunctionalComponents": true }],
     // Disable props spreading (<App {...props} />) warning.
     "react/jsx-props-no-spreading": 0,
     // Throw warning instead of error when using array index as a key.
