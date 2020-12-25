@@ -1,0 +1,36 @@
+.slider {
+  position: absolute !important;
+  z-index: 0 !important;
+  content: '';
+}
+
+.slider ul {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.slide {
+  height: 830px;
+}
+
+@media (max-width: 1139px) {
+  .slide {
+    height: 520px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slide {
+    top: 60px;
+    height: 420px;
+  }
+}
+
+@media (max-width: 490px) {
+  .slide {
+    top: 60px;
+    width: 302px;
+    height: 332px;
+  }
+}

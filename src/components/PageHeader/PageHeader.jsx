@@ -1,44 +1,53 @@
-import React from 'react';
+import React, {useLayoutEffect, useRef, useState} from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import headerLogo from 'assets/images/header-logo.svg';
-import SearchForm from './components/SearchForm/SearchForm';
+import {debounce} from 'utils/common';
+import {RESIZE_DELAY} from 'const';
 import HeaderNav from './components/HeaderNav/HeaderNav';
+import UserSection from './components/UserSection/UserSection';
 
-const PageHeader = props => (
-  <header className="page-header">
-    <div className="page-header__wrap container container--page">
-      <Link to="/" className="page-header__logo-link" aria-label="На главную">
-        <img className="logo__image" src={headerLogo} alt="логотип Conquest" />
-      </Link>
-      <HeaderNav />
+const PageHeader = ({onBrowserResize}) => {
+  const [height, setHeight] = useState(0);
+  const headerRef = useRef();
 
-      <div className="page-header__user-section">
-        <SearchForm />
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      debounce(
+        setHeight(() => headerRef.current.getBoundingClientRect().height),
+        RESIZE_DELAY
+      );
+    };
+    setHeight(
+      () => headerRef.current.getBoundingClientRect().height,
+      onBrowserResize(() => height)
+    );
 
-        <Link
-          to="#"
-          id="favorites"
-          className="page-header__link page-header__link--favorites"
-          aria-label="Избранное">
-          <svg width="20" height="17">
-            <use xlinkHref="img/sprite_auto.svg#icon-like" />
-          </svg>
-          <span id="likes-counter" className="page-header__link-body" />
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [height, onBrowserResize]);
+
+  return (
+    <header className="page-header" ref={headerRef}>
+      <div className="page-header__wrap container container--page">
+        <Link to="/" className="page-header__logo-link" aria-label="На главную">
+          <img
+            className="logo__image"
+            src={headerLogo}
+            alt="логотип Conquest"
+          />
         </Link>
+        <HeaderNav />
 
-        <Link
-          to="/"
-          id="cart-toggle"
-          className="page-header__link page-header__link--cart"
-          aria-label="Корзина">
-          <svg width="19" height="17">
-            <use xlinkHref="img/sprite_auto.svg#icon-cart" />
-          </svg>
-          <span id="cart-counter" className="page-header__link-body" />
-        </Link>
+        <UserSection />
       </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
+
+PageHeader.propTypes = {
+  onBrowserResize: PropTypes.func.isRequired,
+};
 
 export default PageHeader;
