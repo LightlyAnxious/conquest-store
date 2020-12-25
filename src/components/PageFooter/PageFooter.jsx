@@ -10,7 +10,7 @@ const PageFooter = () => (
     <div className="page-footer__wrap">
       <div className="page-footer__inner">
         <Link to="/" className="page-footer__logo-link" aria-label="На главную">
-          <img className={classes.logoImg} src={footerLogo} alt="footer logo" />
+          <img className={classes.logo} src={footerLogo} alt="footer logo" />
         </Link>
         <a
           className="page-footer__link page-footer__contact"

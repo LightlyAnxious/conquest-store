@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.0",
     "classnames": "^2.2.6",
+    "cloudinary-react": "^1.6.8",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-react-app": "^6.0.0",
@@ -30,7 +31,8 @@
     "redux-mock-store": "^1.5.4",
     "redux-promise-middleware": "^6.1.2",
     "stylelint": "^13.8.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "swiper": "^6.4.5"
   },
   "scripts": {
     "start": "react-scripts start",

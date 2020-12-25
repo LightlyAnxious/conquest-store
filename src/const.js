@@ -61,8 +61,20 @@ const FooterNavTitle = {
   DELIVERY: 'Доставка',
 };
 
+const AppRoute = {
+  MAIN: '/',
+  CATALOG: '/catalog',
+  FAVORITES: '/favorites',
+  CART: '/cart',
+  BESTSELLERS: '/bestsellers',
+  DELIVERY: '/delivery',
+  CONTACTS: '/contacts',
+};
+
 const Width = {
   MOBILE: '530',
 };
 
-export {FooterNavSection, FooterNavTitle, Width};
+const RESIZE_DELAY = 500;
+
+export {FooterNavSection, FooterNavTitle, AppRoute, Width, RESIZE_DELAY};
