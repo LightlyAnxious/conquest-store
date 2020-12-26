@@ -1,0 +1,53 @@
+@import 'screens.scss';
+
+:root {
+  --retinaDpi: 144dpi;
+  --retinaDppx: 1.5dppx;
+  --mobileWidth: 767px;
+  --tabletWidth: 1139px;
+  --paleBlack: rgba(27, 26, 23, 0.82);
+  --black: #1b1a17;
+  --beige: #d4b098;
+  --lightBeige: #fdfdfb;
+  --greyDark: #444240;
+  --greyNormal: #555248;
+  --greyLight: #636261;
+  --greyPale: #bdb9b5;
+  --gold: #a69876;
+  --trans: all 0.15s ease-in-out;
+  --instantAnimation: 0.075s;
+  --fastAnimation: 0.125s;
+  --normalAnimation: 0.25s;
+  --slowAnimation: 0.5s;
+  --titleSize: 32px;
+  --titleHeight: 43px;
+  --subTitleSize: 14px;
+  --subTitleHeight: 16px;
+  --contentSize: 12px;
+  --contentHeight: 14px;
+  --promoFont: 16px;
+  --favoritesTop: 91px;
+}
+
+@media (max-width: 1260px) {
+  :root {
+    --promoFont: 14px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  :root {
+    --titleSize: 27px;
+    --titleHeight: 37px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  :root {
+    --titleSize: 24px;
+    --titleHeight: 32px;
+    --subTitleSize: 12px;
+    --subTitleHeight: 14px;
+    --promoFont: 12px;
+  }
+}

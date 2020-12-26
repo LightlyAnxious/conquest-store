@@ -4,7 +4,8 @@ import {slides} from 'mocks/promo.mock';
 import PromoSocials from './components/PromoSocials/PromoSocials';
 import PromoCollection from './components/PromoCollection/PromoCollection';
 import PromoSlider from './components/PromoSlider/PromoSlider';
-import classes from './Promo.module.css';
+
+import './Promo.scss';
 
 const Promo = ({addHeight}) => {
   const [promoHeight, setPromoHeight] = useState(0);
@@ -18,7 +19,7 @@ const Promo = ({addHeight}) => {
 
   return (
     <section className="promo" ref={promoRef}>
-      <div className={`${classes.container} promo__wrap container`}>
+      <div className="promo__wrap container">
         <h1 className="visually-hidden">
           Conquest - часы премиум брендов с доставкой
         </h1>

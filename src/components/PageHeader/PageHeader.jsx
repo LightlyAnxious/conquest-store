@@ -7,6 +7,8 @@ import {RESIZE_DELAY} from 'const';
 import HeaderNav from './components/HeaderNav/HeaderNav';
 import UserSection from './components/UserSection/UserSection';
 
+import './PageHeader.scss';
+
 const PageHeader = ({onBrowserResize}) => {
   const [height, setHeight] = useState(0);
   const headerRef = useRef();
@@ -30,7 +32,7 @@ const PageHeader = ({onBrowserResize}) => {
 
   return (
     <header className="page-header" ref={headerRef}>
-      <div className="page-header__wrap container container--page">
+      <div className="container page-header__wrap">
         <Link to="/" className="page-header__logo-link" aria-label="На главную">
           <img
             className="logo__image"

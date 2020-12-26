@@ -2,16 +2,14 @@ import React from 'react';
 import classNames from 'classnames';
 import {Link} from 'react-router-dom';
 import useActiveState from 'hooks/useActiveState';
+import HamburgerBtn from './components/HamburgerBtn';
 
-import './HeaderNav.css';
+import './HeaderNav.scss';
 
 const HeaderNav = () => {
   const {isActive, setIsActive} = useActiveState();
   const menuClasses = classNames('page-header__menu', 'menu', {
     'menu--shown': isActive,
-  });
-  const burgerBtnClasses = classNames('menu__btn', 'hamburger-btn', {
-    'hamburger-btn--active': isActive,
   });
   const wrapperClasses = classNames('menu__wrap', {
     'menu__wrap--fullscreen': isActive,
@@ -19,19 +17,12 @@ const HeaderNav = () => {
   const menuListClasses = classNames('menu__list', {
     'menu__list--shown': isActive,
   });
-  const handleClick = () => setIsActive(() => !isActive);
+  const onBtnClick = () => setIsActive(() => !isActive);
 
   return (
     <nav id="menu" className={menuClasses}>
       <div className={wrapperClasses}>
-        <button
-          onClick={handleClick}
-          type="button"
-          className={burgerBtnClasses}
-          aria-label="Открыть меню"
-          aria-expanded="false">
-          <span className="hamburger-btn__body" />
-        </button>
+        <HamburgerBtn isActive={isActive} onBtnClick={onBtnClick} />
         <ul id="menu-list" className={menuListClasses}>
           <li className="menu__item">
             <Link

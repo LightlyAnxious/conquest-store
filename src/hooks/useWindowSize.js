@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import {debounce} from 'utils/common';
 
-const debounceDelay = 300;
+const debounceDelay = 50;
 
 export default function useWindowSize() {
   const isSSR = typeof window !== 'undefined';
