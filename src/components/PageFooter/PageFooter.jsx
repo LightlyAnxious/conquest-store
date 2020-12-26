@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import footerLogo from 'assets/images/footer-logo.svg';
 import FooterNav from './components/FooterNav/FooterNav';
 
+import './PageFooter.scss';
 import classes from './PageFooter.module.css';
 
 const PageFooter = () => (

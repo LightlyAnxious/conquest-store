@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import SearchForm from './components/SearchForm/SearchForm';
 
+import './UserSection.scss';
+
 const UserSection = () => (
   <div className="page-header__user-section">
     <SearchForm />

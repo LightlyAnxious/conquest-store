@@ -1,0 +1,48 @@
+@import 'css/sass/mixins.scss';
+
+.socials {
+  max-width: 100%;
+}
+
+.socials__list {
+  @include list-reset;
+
+  display: flex;
+}
+
+.socials__item {
+  margin-bottom: 13px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.socials__icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: var(--greyDark);
+  transition: var(--trans);
+}
+
+.socials__link {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    & .socials__icon {
+      fill: var(--gold);
+    }
+  }
+
+  &:active {
+    & .socials__icon {
+      fill: var(--gold);
+      fill-opacity: 0.5;
+    }
+  }
+}

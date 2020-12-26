@@ -1,29 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {socials} from 'const';
 
-const socials = [
-  {
-    link: '#',
-    desc: 'instagram',
-    icon: 'img/sprite_auto.svg#icon-instagram',
-    width: '18',
-    height: '18',
-  },
-  {
-    link: '#',
-    desc: 'facebook',
-    icon: 'img/sprite_auto.svg#icon-facebook',
-    width: '9',
-    height: '17',
-  },
-  {
-    link: '#',
-    desc: 'twitter',
-    icon: 'img/sprite_auto.svg#icon-twitter',
-    width: '17',
-    height: '14',
-  },
-];
+import './PromoSocials.scss';
 
 const PromoSocials = () => (
   <div className="promo__socials socials">

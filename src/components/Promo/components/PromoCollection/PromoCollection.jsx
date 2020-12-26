@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import Btn from 'components/Shared/Btn/Btn';
 import {AppRoute} from 'const';
 
 const PromoCollection = () => (
@@ -9,9 +9,9 @@ const PromoCollection = () => (
     <p className="promo__desc">
       Швейцарские часы в наличии в Москве и с доставкой по всему миру
     </p>
-    <Link to={AppRoute.CATALOG} className="promo__btn btn btn--grey">
+    <Btn isLink path={AppRoute.CATALOG} className="promo__btn btn btn--grey">
       Смотреть каталог
-    </Link>
+    </Btn>
   </div>
 );
 

@@ -1,3 +1,5 @@
+const RESIZE_DELAY = 500;
+
 const FooterNavSection = {
   ABOUT: [
     {
@@ -75,6 +77,35 @@ const Width = {
   MOBILE: '530',
 };
 
-const RESIZE_DELAY = 500;
+const socials = [
+  {
+    link: '#',
+    desc: 'instagram',
+    icon: 'img/sprite_auto.svg#icon-instagram',
+    width: '18',
+    height: '18',
+  },
+  {
+    link: '#',
+    desc: 'facebook',
+    icon: 'img/sprite_auto.svg#icon-facebook',
+    width: '9',
+    height: '17',
+  },
+  {
+    link: '#',
+    desc: 'twitter',
+    icon: 'img/sprite_auto.svg#icon-twitter',
+    width: '17',
+    height: '14',
+  },
+];
 
-export {FooterNavSection, FooterNavTitle, AppRoute, Width, RESIZE_DELAY};
+export {
+  FooterNavSection,
+  FooterNavTitle,
+  AppRoute,
+  Width,
+  socials,
+  RESIZE_DELAY,
+};
