@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import SearchForm from './components/SearchForm/SearchForm';
 
 import './UserSection.scss';
 
-const UserSection = () => (
+const UserSection = ({onSearch}) => (
   <div className="page-header__user-section">
-    <SearchForm />
+    <SearchForm onSearch={onSearch} />
 
     <Link
       to="#"
@@ -31,5 +32,9 @@ const UserSection = () => (
     </Link>
   </div>
 );
+
+UserSection.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};
 
 export default UserSection;

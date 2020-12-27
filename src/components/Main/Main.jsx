@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import PageHeader from 'components/PageHeader/PageHeader';
 import PageFooter from 'components/PageFooter/PageFooter';
-import Promo from '../Promo/Promo';
+import Bestsellers from 'components/Bestsellers/Bestsellers';
+import Promo from 'components/Promo/Promo';
 
 const Main = () => {
   const [addHeight, setAddHeight] = useState(0);
@@ -10,7 +11,8 @@ const Main = () => {
     <>
       <PageHeader onBrowserResize={setAddHeight} />
       <main className="site-content">
-        <Promo addHeight={addHeight} />
+        {/* <Promo addHeight={addHeight} /> */}
+        <Bestsellers />
       </main>
       <PageFooter />
     </>

@@ -1,4 +1,6 @@
 const RESIZE_DELAY = 500;
+const CDN_URL =
+  'https://res.cloudinary.com/funcrusher/image/upload/v1609078829/conquest-store/';
 
 const FooterNavSection = {
   ABOUT: [
@@ -68,6 +70,7 @@ const AppRoute = {
   CATALOG: '/catalog',
   FAVORITES: '/favorites',
   CART: '/cart',
+  CARD: '/card',
   BESTSELLERS: '/bestsellers',
   DELIVERY: '/delivery',
   CONTACTS: '/contacts',
@@ -108,4 +111,5 @@ export {
   Width,
   socials,
   RESIZE_DELAY,
+  CDN_URL,
 };

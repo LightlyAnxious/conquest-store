@@ -12,9 +12,9 @@
 }
 
 .search__field {
-  position: absolute;
-  top: 0;
-  right: 23px;
+  // position: absolute;
+  // top: 0;
+  // right: 23px;
   width: 0;
   height: 100%;
   border: 0;
@@ -30,7 +30,7 @@
   }
 
   &--expanded {
-    width: 139px;
+    width: auto;
     border-bottom: 1px solid var(--greyDark);
     animation: var(--fastAnimation) linear both expand-left;
   }
@@ -81,8 +81,14 @@
     margin-right: 15px;
   }
 
+  .search__title {
+    display: flex;
+    flex-grow: 1;
+  }
+
   .search__field {
     position: static;
+    display: flex;
 
     &--expanded {
       flex-grow: 1;
