@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import PropTypes from 'prop-types';
+import React, {useState, useEffect} from 'react';
 import classNames from 'classnames';
 import useComponentVisible from 'hooks/useComponentVisible';
 import watchesPropTypes from 'proptypes/watches.prop';
 import SearchTipList from './components/SearchTipList/SearchTipList';
 
-const SearchForm = ({watches = []}) => {
+const SearchForm = ({watches = [], onSearch}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const searchResults = !searchTerm
     ? null
@@ -35,6 +36,8 @@ const SearchForm = ({watches = []}) => {
     }
     return null;
   };
+
+  useEffect(() => onSearch(isComponentVisible), [isComponentVisible, onSearch]);
 
   return (
     <form
@@ -74,6 +77,7 @@ const SearchForm = ({watches = []}) => {
 };
 
 SearchForm.propTypes = {
+  onSearch: PropTypes.func,
   watches: watchesPropTypes,
 };
 
