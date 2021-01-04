@@ -27,3 +27,9 @@ App for multibrand watch store
     ├── withProvider.js # utility to generate Provider components
     └── withReduxFeatures.js # Redux store HOC
 ```
+
+## Basic commands for work
+* Installation - `npm i`
+* Start local server - `npm start`
+* Building the project without starting the local server - `npm run-script build`
+* Start testing for compliance with code guides - `npm test`
