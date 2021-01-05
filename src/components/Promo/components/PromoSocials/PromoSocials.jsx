@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {socials} from 'const';
+import {socials} from 'config/site-content';
 
 import './PromoSocials.scss';
 

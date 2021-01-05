@@ -121,8 +121,9 @@
 
   &:hover,
   &:focus {
-    & .bestsellers__image {
-      transform: translate(-50%, -50%) scale(1.05);
+    & img {
+      transform: scale(1.05);
+      transition: all 0.15s ease-in-out !important;
     }
 
     &::before {
@@ -136,8 +137,9 @@
   &:active {
     opacity: 0.5;
 
-    & .bestsellers__image {
-      transform: translate(-50%, -50%) scale(1.05);
+    & img {
+      transform: scale(1.05);
+      transition: all 0.15s ease-in-out !important;
     }
   }
 }

@@ -1,6 +1,5 @@
 import React, {useRef, useLayoutEffect, useState} from 'react';
 import PropTypes from 'prop-types';
-import {slides} from 'mocks/promo.mock';
 import PromoSocials from './components/PromoSocials/PromoSocials';
 import PromoCollection from './components/PromoCollection/PromoCollection';
 import PromoSlider from './components/PromoSlider/PromoSlider';
@@ -26,7 +25,7 @@ const Promo = ({addHeight}) => {
         <PromoSocials />
         <PromoCollection />
       </div>
-      <PromoSlider slides={slides} height={promoHeight} />
+      <PromoSlider height={promoHeight} />
     </section>
   );
 };

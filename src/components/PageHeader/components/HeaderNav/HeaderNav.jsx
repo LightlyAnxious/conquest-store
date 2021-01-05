@@ -1,62 +1,42 @@
 import React from 'react';
-import classNames from 'classnames';
 import {Link} from 'react-router-dom';
-import useActiveState from 'hooks/useActiveState';
-import HamburgerBtn from './components/HamburgerBtn';
+import {AppRoute} from 'const';
 
 import './HeaderNav.scss';
 
-const HeaderNav = () => {
-  const {isActive, setIsActive} = useActiveState();
-  const menuClasses = classNames('page-header__menu', 'menu', {
-    'menu--shown': isActive,
-  });
-  const wrapperClasses = classNames('menu__wrap', {
-    'menu__wrap--fullscreen': isActive,
-  });
-  const menuListClasses = classNames('menu__list', {
-    'menu__list--shown': isActive,
-  });
-  const onBtnClick = () => setIsActive(() => !isActive);
-
-  return (
-    <nav id="menu" className={menuClasses}>
-      <div className={wrapperClasses}>
-        <HamburgerBtn isActive={isActive} onBtnClick={onBtnClick} />
-        <ul id="menu-list" className={menuListClasses}>
-          <li className="menu__item">
-            <Link
-              className="menu__page-link"
-              to="/catalog"
-              aria-label="Каталог">
-              Каталог
-            </Link>
-          </li>
-          <li className="menu__item">
-            <Link className="menu__page-link" to="#" aria-label="Акции">
-              Акции
-            </Link>
-          </li>
-          <li className="menu__item">
-            <Link
-              className="menu__page-link"
-              to="/delivery"
-              aria-label="Доставка">
-              Доставка
-            </Link>
-          </li>
-          <li className="menu__item">
-            <Link
-              className="menu__page-link"
-              to="/contacts"
-              aria-label="Контакты">
-              Контакты
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
-};
-
+const HeaderNav = () => (
+  <nav id="menu" className="page-header__menu menu">
+    <ul id="menu-list" className="menu__list">
+      <li className="menu__item">
+        <Link
+          className="menu__page-link"
+          to={AppRoute.CATALOG}
+          aria-label="Каталог">
+          Каталог
+        </Link>
+      </li>
+      <li className="menu__item">
+        <Link className="menu__page-link" to="#" aria-label="Акции">
+          Акции
+        </Link>
+      </li>
+      <li className="menu__item">
+        <Link
+          className="menu__page-link"
+          to={AppRoute.DELIVERY}
+          aria-label="Доставка">
+          Доставка
+        </Link>
+      </li>
+      <li className="menu__item">
+        <Link
+          className="menu__page-link"
+          to={AppRoute.CONTACTS}
+          aria-label="Контакты">
+          Контакты
+        </Link>
+      </li>
+    </ul>
+  </nav>
+);
 export default HeaderNav;

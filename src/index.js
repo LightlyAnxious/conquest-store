@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import withReduxFeatures from './withReduxFeatures';
+import withReduxFeatures from 'hocs/withReduxFeatures';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
