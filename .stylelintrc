@@ -3,7 +3,7 @@
   "rules": {
     "function-calc-no-unspaced-operator": true,
     "at-rule-no-unknown": [true, {
-      "ignoreAtRules": ["function", "if", "each", "include", "mixin"]
+      "ignoreAtRules": ["function", "return", "else", "if", "each", "include", "mixin"]
     }],
     "order/order": [
       "custom-properties",

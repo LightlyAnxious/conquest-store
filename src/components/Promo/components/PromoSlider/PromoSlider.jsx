@@ -1,56 +1,68 @@
 import React from 'react';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Autoplay, EffectFade} from 'swiper';
-import {Image, Placeholder} from 'cloudinary-react';
+import Slider from 'react-slick';
+import Img from 'react-cloudinary-lazy-image';
+import {CDN_URL} from 'const';
+import {promoSizes} from 'config/images';
+import {promo} from 'config/site-content';
+import {detectScreen} from 'utils/common';
+import useWindowSize from 'hooks/useWindowSize';
 import PropTypes from 'prop-types';
 import {ReactComponent as Ruble} from 'assets/images/ruble.svg';
 
-import 'swiper/swiper-bundle.css';
-import 'swiper/components/effect-fade/effect-fade.min.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-SwiperCore.use([Autoplay, EffectFade]);
+const PromoSlider = ({slides = promo, height = 0}) => {
+  const {width} = useWindowSize();
 
-const PromoSlider = ({slides = [], height = 0}) => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 1500,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    cssEase: 'linear',
+    draggable: false,
+    fade: true,
+  };
+
   if (!slides) {
     return null;
   }
 
   const preparedSlides = slides.map((slide, index) => {
-    const {id, price, diameter} = slide;
+    const {id, price, diameter, image} = slide;
+
     return (
-      <SwiperSlide key={id} tag="li" className="promo__slide">
+      <div key={id} className="promo__slide">
         <div className="promo__item">
           <p className="promo__price">
             {price}
             <Ruble className="promo__currency" />
           </p>
           <p className="promo__diameter">{diameter} мм диаметр</p>
-          <Image
-            className="promo__image"
-            cloudName="funcrusher"
-            publicId={id}
-            fetchFormat="auto"
-            crop="scale"
-            width="auto"
-            dpr="auto"
-            responsive>
-            <Placeholder type="pixelate" />
-          </Image>
+          <Img
+            cloudName={CDN_URL}
+            imageName={image}
+            urlParams="dpr_auto"
+            fluid={{
+              maxWidth: promoSizes[detectScreen(width)],
+            }}
+          />
         </div>
-      </SwiperSlide>
+      </div>
     );
   });
 
   return (
-    <Swiper
-      className="promo__slider"
+    <Slider
+      {...settings}
       style={{height: `${height}px`}}
-      wrapperTag="ul"
-      // autoplay={{delay: 5000}}
-      speed={1000}
-      effect="fade">
+      className="promo__slider">
       {preparedSlides}
-    </Swiper>
+    </Slider>
   );
 };
 

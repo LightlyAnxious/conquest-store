@@ -5,7 +5,7 @@
   display: none;
   width: 18px;
   height: 16px;
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
 .menu__list {
@@ -70,7 +70,7 @@
       flex-direction: column;
       align-items: flex-end;
       width: 100vw;
-      height: 100vh;
+      height: auto;
       padding: 36px 2% 31px;
       box-sizing: border-box;
       background-color: var(--lightBeige);
@@ -82,22 +82,18 @@
     margin-bottom: 48px;
   }
 
-  .menu .menu__btn {
+  .menu__btn {
     display: block;
   }
 
   .menu__list {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    margin: 170px auto 45px;
+    text-align: center;
 
-    &--shown {
-      display: flex;
-      flex-direction: column;
-      margin: 170px auto 45px;
-      text-align: center;
-
-      & .menu__item {
-        margin-right: 0;
-      }
+    & .menu__item {
+      margin-right: 0;
     }
   }
 
@@ -109,12 +105,6 @@
 // ! Мобильная версия
 
 @media (max-width: $mobile-width) {
-  .menu__wrap {
-    &--fullscreen {
-      padding: 25px 5%;
-    }
-  }
-
   .menu__btn {
     display: block;
   }
@@ -133,18 +123,61 @@
   margin-right: 39px;
 }
 
-.menu__list--shown {
+.dropdown-enter {
   animation: expand 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
-@keyframes expand {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
+.dropdown-exit {
+  animation: collapse 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.roll-enter {
+  height: auto;
+}
+
+.roll-enter-active {
+  height: 50vh;
+  transition: height 150ms linear;
+}
+
+.roll-enter-done {
+  height: 100vh;
+  transition: height 150ms linear;
+}
+
+.roll-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100vw;
+  height: 100vh;
+  padding: 36px 2% 31px;
+  box-sizing: border-box;
+  background-color: var(--lightBeige);
+  transition: height 1500ms linear;
+}
+
+.roll-exit-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100vw;
+  height: 50vh;
+  padding: 36px 2% 31px;
+  box-sizing: border-box;
+  background-color: var(--lightBeige);
+  transition: height 1500ms linear;
+}
+
+.roll-exit-done {
+  position: static;
+  height: auto;
 }

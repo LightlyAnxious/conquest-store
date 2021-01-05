@@ -1,13 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {Image, Placeholder} from 'cloudinary-react';
+import Img from 'react-cloudinary-lazy-image';
 import {CDN_URL} from 'const';
+import {bestsellersSizes} from 'config/images';
+import {detectScreen} from 'utils/common';
+import useWindowSize from 'hooks/useWindowSize';
 
 const BestsellersList = ({bestWatches}) => {
+  const {width} = useWindowSize();
+
   if (!bestWatches) {
     return null;
   }
+
   const currentWatches = bestWatches.map(watch => {
     const {title, price, image, id} = watch;
 
@@ -23,18 +29,15 @@ const BestsellersList = ({bestWatches}) => {
         </h3>
         <p className="bestsellers__price">{price} ₽</p>
         <div className="bestsellers__media-wrap">
-          <Image
+          <Img
             className="bestsellers__image"
-            cloudName="funcrusher"
-            publicId={`${CDN_URL}${image}`}
-            fetchFormat="auto"
-            crop="scale"
-            width="auto"
-            dpr="auto"
-            alt={`Часы ${title}`}
-            responsive>
-            <Placeholder type="pixelate" />
-          </Image>
+            cloudName={CDN_URL}
+            imageName={image}
+            urlParams="dpr_auto"
+            fluid={{
+              maxWidth: bestsellersSizes[detectScreen(width)],
+            }}
+          />
         </div>
         <Link
           to={`/card/${id}`}

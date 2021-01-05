@@ -1,34 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {AppRoute} from 'const';
+import {bestWatches} from 'config/site-content';
 import BestsellersList from './components/BestsellersList';
-
-const bestWatches = [
-  {
-    title: 'Rado',
-    price: 65300,
-    image: 'bestsellers/rado-1_2x_wpnv13',
-    id: 'rado-1_2x_wpnv13',
-  },
-  {
-    title: 'Rado',
-    price: 65300,
-    image: 'bestsellers/rado-2_2x_whjky8',
-    id: 'rado-2_2x_whjky8',
-  },
-  {
-    title: 'Bulgari',
-    price: 81700,
-    image: 'bestsellers/bulgari-1_2x_tzeiqh',
-    id: 'bulgari-1_2x_tzeiqh',
-  },
-  {
-    title: 'Bulgari',
-    price: 72700,
-    image: 'bestsellers/bulgari-2_2x_acdubi',
-    id: 'bulgari-2_2x_acdubi',
-  },
-];
 
 const Bestsellers = () => {
   return (
