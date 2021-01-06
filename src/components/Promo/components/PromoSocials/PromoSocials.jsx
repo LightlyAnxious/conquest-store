@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {socials} from 'config/site-content';
+import {promoSocials} from 'config/site-content';
 
 import './PromoSocials.scss';
 
 const PromoSocials = () => (
   <div className="promo__socials socials">
     <ul className="promo__social-list socials__list">
-      {socials.map(socialItem => {
+      {promoSocials.map(socialItem => {
         const {link, desc, icon, width, height} = socialItem;
 
         return (

@@ -1,6 +1,10 @@
 @import 'css/sass/mixins.scss';
 @import 'css/sass/screens.scss';
 
+.menu {
+  z-index: 3;
+}
+
 .menu__btn {
   display: none;
   width: 18px;

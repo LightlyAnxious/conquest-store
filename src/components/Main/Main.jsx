@@ -4,6 +4,7 @@ import PageFooter from 'components/PageFooter/PageFooter';
 import Bestsellers from 'components/Bestsellers/Bestsellers';
 import Promo from 'components/Promo/Promo';
 import Advantages from 'components/Main/components/Advantages/Advantages';
+import News from 'components/News';
 
 const Main = () => {
   const [addHeight, setAddHeight] = useState(0);
@@ -12,9 +13,10 @@ const Main = () => {
     <>
       <PageHeader onBrowserResize={setAddHeight} />
       <main className="site-content">
-        <Promo addHeight={addHeight} />
-        <Bestsellers />
-        <Advantages />
+        {/* <Promo addHeight={addHeight} /> */}
+        {/* <Bestsellers /> */}
+        {/* <Advantages /> */}
+        <News />
       </main>
       <PageFooter />
     </>
