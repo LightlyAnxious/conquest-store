@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import HamburgerBtn from 'components/Shared/HamburgerBtn/HamburgerBtn';
+import HamburgerBtn from 'components/shared/HamburgerBtn/HamburgerBtn';
+import ModalCart from 'components/modal/ModalCart/ModalCart';
 import useActions from 'store/features/settings/actionCreators';
 import withActiveState from 'hocs/withActiveState';
 import SearchForm from './components/SearchForm/SearchForm';
@@ -30,16 +31,19 @@ const UserSection = ({isActive, onChangeActive, onSearch}) => {
         <span id="likes-counter" className="page-header__link-body" />
       </Link>
 
-      <Link
-        to="/"
-        id="cart-toggle"
-        className="page-header__link page-header__link--cart"
-        aria-label="Корзина">
-        <svg width="19" height="17">
-          <use xlinkHref="img/sprite_auto.svg#icon-cart" />
-        </svg>
-        <span id="cart-counter" className="page-header__link-body" />
-      </Link>
+      <div className="page-header__cart-wrap">
+        <Link
+          to="/"
+          id="cart-toggle"
+          className="page-header__link page-header__link--cart"
+          aria-label="Корзина">
+          <svg width="19" height="17">
+            <use xlinkHref="img/sprite_auto.svg#icon-cart" />
+          </svg>
+          <span id="cart-counter" className="page-header__link-body" />
+        </Link>
+        <ModalCart />
+      </div>
       <HamburgerBtn onBtnClick={onChangeActive} isActive={isActive} />
     </div>
   );

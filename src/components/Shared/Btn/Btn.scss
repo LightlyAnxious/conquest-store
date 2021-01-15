@@ -27,6 +27,12 @@
     opacity: 0.5;
   }
 
+  &--transparent {
+    border: 1px solid var(--black);
+    color: var(--black);
+    background-color: transparent;
+  }
+
   &--grey {
     background-color: #444240;
   }
