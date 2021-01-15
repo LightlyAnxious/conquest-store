@@ -12,17 +12,30 @@ const debounce = (callback, wait) => {
 const detectScreen = width => {
   let currentScreen = '';
 
-  const screens = [
-    ['desktop', width > Screen.TABLET],
-    ['tablet', width > Screen.MOBILE && width <= Screen.TABLET],
-    ['mobile', width <= Screen.MOBILE],
-  ];
+  // const screens = [
+  //   ['desktop', width > Screen.TABLET],
+  //   ['tablet', width > Screen.MOBILE && width <= Screen.TABLET],
+  //   ['mobile', width <= Screen.MOBILE],
+  // ];
 
-  screens.forEach(entry => {
-    const [key, value] = entry;
+  // screens.forEach(entry => {
+  //   const [key, value] = entry;
 
-    value ? (currentScreen = key) : '';
-  });
+  //   value ? (currentScreen = key) : '';
+  // });
+
+  if (width > Screen.TABLET) {
+    currentScreen = 'desktop';
+  }
+
+  if (width > Screen.MOBILE && width <= Screen.TABLET) {
+    currentScreen = 'tablet';
+  }
+
+  if (width <= Screen.MOBILE) {
+    currentScreen = 'mobile';
+  }
+
   return currentScreen;
 };
 

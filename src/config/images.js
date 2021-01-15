@@ -16,4 +16,10 @@ const advantagesSizes = {
   mobile: 255,
 };
 
-export {promoSizes, bestsellersSizes, advantagesSizes};
+const newsSizes = {
+  desktop: 600,
+  tablet: 450,
+  mobile: 255,
+};
+
+export {promoSizes, bestsellersSizes, advantagesSizes, newsSizes};

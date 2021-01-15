@@ -1,0 +1,151 @@
+@import 'css/sass/mixins.scss';
+@import 'css/sass/screens.scss';
+
+.news__wrap {
+  position: relative;
+  width: 86%;
+  max-width: 1171px;
+  min-height: 440px;
+  margin: 0 auto;
+  padding: 0 0 80px;
+  overflow: hidden;
+  background-image: url('https://res.cloudinary.com/funcrusher/image/upload/dpr_auto,f_auto,q_auto,w_600/v1609964225/conquest-store/news/news-bg-masonry_2x_fe6lxv');
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: 600px 440px;
+}
+
+.news__title {
+  @include playfair-r;
+
+  margin: 140px 0 40px;
+  max-width: 480px;
+  font-size: var(--titleSize);
+  line-height: var(--titleHeight);
+}
+
+.news__link {
+  @include roboto-b;
+
+  color: var(--black);
+  font-weight: 800;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: var(--gold);
+  }
+
+  &:active {
+    color: var(--gold);
+    opacity: 0.7;
+  }
+}
+
+.news__desc {
+  max-width: 380px;
+  margin: 0 0 50px;
+}
+
+.news__social-list {
+  align-items: baseline;
+  margin-bottom: 40px;
+}
+
+.news__social-link {
+  margin-right: 18px;
+}
+
+.news__media-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  width: 600px;
+}
+
+.news__image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .news__wrap {
+    background-size: 570px 438px;
+  }
+}
+
+// ! Планшетная версия
+
+@media (max-width: $tablet-width) {
+  .news__wrap {
+    width: 88%;
+    max-width: none;
+    min-height: 350px;
+    padding: 20px 0 60px;
+    background-image: url('https://res.cloudinary.com/funcrusher/image/upload/dpr_auto,f_auto,q_auto,w_450/v1609964225/conquest-store/news/news-bg-masonry_2x_fe6lxv');
+    background-size: 450px 328px;
+  }
+
+  .news__title {
+    margin-top: 90px;
+  }
+
+  .news__desc {
+    font-size: 14px;
+  }
+
+  .news__media-wrap {
+    top: 50%;
+    width: 450px;
+    transform: translate(0, -50%);
+  }
+}
+
+@media (max-width: 950px) {
+  .news__media-wrap {
+    width: 48%;
+  }
+}
+
+@media (max-width: 930px) {
+  .news__desc {
+    max-width: 325px;
+  }
+
+  .news__wrap {
+    background-size: 50% 65%;
+  }
+}
+
+// ! Мобильная версия
+
+@media (max-width: $mobile-width) {
+  .news__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 180px;
+    background-image: url('https://res.cloudinary.com/funcrusher/image/upload/dpr_auto,f_auto,q_auto,w_255/v1609964225/conquest-store/news/news-bg-masonry_2x_fe6lxv');
+    background-size: 255px 203px;
+    background-position: 50% 0;
+  }
+
+  .news__title {
+    text-align: center;
+  }
+
+  .news__desc {
+    text-align: center;
+  }
+
+  .news__media-wrap {
+    top: 0;
+    left: 50%;
+    width: 255px;
+    height: 203px;
+    transform: translate(-50%, 0);
+  }
+}

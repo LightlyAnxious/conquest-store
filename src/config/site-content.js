@@ -61,7 +61,7 @@ const FooterNavTitle = {
   DELIVERY: 'Доставка',
 };
 
-const socials = [
+const promoSocials = [
   {
     link: '#',
     desc: 'instagram',
@@ -82,6 +82,30 @@ const socials = [
     icon: 'img/sprite_auto.svg#icon-twitter',
     width: '17',
     height: '14',
+  },
+];
+
+const news = [
+  {
+    link: '/',
+    desc: 'instagram',
+    icon: 'img/sprite_auto.svg#icon-instagram',
+    width: '23',
+    height: '24',
+  },
+  {
+    link: '/',
+    desc: 'facebook',
+    icon: 'img/sprite_auto.svg#icon-facebook',
+    width: '12',
+    height: '22',
+  },
+  {
+    link: '/',
+    desc: 'twitter',
+    icon: 'img/sprite_auto.svg#icon-twitter',
+    width: '24',
+    height: '18',
   },
 ];
 
@@ -160,7 +184,8 @@ const promo = [
 export {
   FooterNavSection,
   FooterNavTitle,
-  socials,
+  promoSocials,
+  news,
   bestWatches,
   promo,
   advantages,
