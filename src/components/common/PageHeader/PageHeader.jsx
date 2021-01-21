@@ -1,27 +1,28 @@
 import React, {useLayoutEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {connect} from 'react-redux';
 import {CSSTransition} from 'react-transition-group';
 import {Link} from 'react-router-dom';
-import headerLogo from 'assets/images/header-logo.svg';
+
 import {debounce} from 'utils/common';
 import {RESIZE_DELAY} from 'const';
-import {menuSelector} from 'store/selectors';
+import {useMenuState} from 'store/features/settings';
 import useWindowSize from 'hooks/useWindowSize';
+
+import headerLogo from 'assets/images/header-logo.svg';
 import HeaderNav from './components/HeaderNav/HeaderNav';
 import UserSection from './components/UserSection/UserSection';
 
 import './PageHeader.scss';
 
-const PageHeader = ({onBrowserResize, isMenuOpened}) => {
+const PageHeader = ({onBrowserResize}) => {
   const [height, setHeight] = useState(0);
   const [isSearchActive, setIsSearchActive] = useState(false);
   const headerRef = useRef();
   const {width} = useWindowSize();
   const isTablet = width < 1140;
   const isMobile = width < 490;
-  // const isMenuOpened = useMenuState();
+  const isMenuOpened = useMenuState();
   const logoClasses = classNames({
     'page-header__logo-link--expanded': isMobile,
     'page-header__logo-link--collapsed': isMobile && isSearchActive,
@@ -80,11 +81,6 @@ const PageHeader = ({onBrowserResize, isMenuOpened}) => {
 
 PageHeader.propTypes = {
   onBrowserResize: PropTypes.func.isRequired,
-  isMenuOpened: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => ({
-  isMenuOpened: menuSelector(state),
-});
-
-export default connect(mapStateToProps)(PageHeader);
+export default PageHeader;

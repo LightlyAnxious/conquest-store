@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import PageHeader from 'components/PageHeader/PageHeader';
-import PageFooter from 'components/PageFooter/PageFooter';
-import Bestsellers from 'components/Bestsellers/Bestsellers';
-import Promo from 'components/Promo/Promo';
-import Advantages from 'components/Main/components/Advantages/Advantages';
-import News from 'components/News';
+import PageHeader from 'components/common/PageHeader';
+import PageFooter from 'components/common/PageFooter';
+import Bestsellers from './components/Bestsellers';
+import Promo from './components/Promo';
+import Advantages from './components/Advantages';
+import News from './components/News';
 
 const Main = () => {
   const [addHeight, setAddHeight] = useState(0);

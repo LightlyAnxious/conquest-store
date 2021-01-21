@@ -2,6 +2,7 @@ import {combineReducers, createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import promise from 'redux-promise-middleware';
 import {settingsReducer} from 'store/features/settings';
+import {shopReducer} from 'store/features/shop';
 import withProvider from 'hocs/withProvider';
 
 /**
@@ -10,6 +11,7 @@ import withProvider from 'hocs/withProvider';
  */
 const rootReducer = combineReducers({
   settings: settingsReducer,
+  shop: shopReducer,
 });
 
 /**

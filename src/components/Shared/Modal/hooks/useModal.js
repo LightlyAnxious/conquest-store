@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
-const useModal = () => {
-  const [modal, setModal] = useState(false);
+const useModal = isComponentVisible => {
+  const [modal, setModal] = useState(isComponentVisible);
   const [modalContent, setModalContent] = useState("I'm the modal content");
 
   const handleModal = (content = false) => {

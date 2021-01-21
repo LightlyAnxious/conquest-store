@@ -1,5 +1,5 @@
-@import '../../css/sass/mixins.scss';
-@import '../../css/sass/screens.scss';
+@import 'css/sass/mixins.scss';
+@import 'css/sass/screens.scss';
 
 .page-header {
   --transition-time: 300ms;
@@ -236,7 +236,7 @@
 .menu-modal-exit {
   display: flex;
   height: 100vh;
-  opacity: 1;
+  opacity: 0.6;
 }
 
 .menu-modal-exit-active {

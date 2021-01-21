@@ -1,16 +1,17 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import HamburgerBtn from 'components/shared/HamburgerBtn/HamburgerBtn';
-import ModalCart from 'components/modal/ModalCart/ModalCart';
+
 import useActions from 'store/features/settings/actionCreators';
 import withActiveState from 'hocs/withActiveState';
-import SearchForm from './components/SearchForm/SearchForm';
 
-import './UserSection.scss';
+import HamburgerBtn from 'components/shared/HamburgerBtn/HamburgerBtn';
+import ModalCart from 'components/modal/ModalCart/ModalCart';
+import SearchProvider from 'components/modal/SearchProvider';
 
-const UserSection = ({isActive, onChangeActive, onSearch}) => {
+const UserSection = ({isActive, onChangeActive}) => {
   const {toggleMenu} = useActions();
+
   /* eslint-disable */
   useEffect(() => {
     toggleMenu(isActive);
@@ -18,7 +19,7 @@ const UserSection = ({isActive, onChangeActive, onSearch}) => {
   /* eslint-enable */
   return (
     <div className="page-header__user-section">
-      <SearchForm onSearch={onSearch} />
+      <SearchProvider />
 
       <Link
         to="#"
@@ -51,7 +52,6 @@ const UserSection = ({isActive, onChangeActive, onSearch}) => {
 
 UserSection.propTypes = {
   isActive: PropTypes.bool,
-  onSearch: PropTypes.func.isRequired,
   onChangeActive: PropTypes.func.isRequired,
 };
 
