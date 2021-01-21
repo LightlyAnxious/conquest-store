@@ -31,6 +31,7 @@
     // Disable <Fragment> => <> replacement. Feel free to change
     "react/jsx-fragments": "off",
     // Below is the set of functional rules to warn developer about accidental mutations, which may cause error in reducers etc.
+    "import/no-unresolved": "off",
     // No delete operator.
     "fp/no-delete": "warn",
     // Warning when Object.assign(a, b) used, since it mutates first argument. Object.assign({}, a, b) is ok.
@@ -48,7 +49,7 @@
       {
         "commonjs": true,
         "allowThis": true,
-        "exceptions": [{"property": "propTypes"}, {"property": "defaultProps"}, {"property": "current"}]
+        "exceptions": [{"property": "propTypes"}, { "object": "draftState" }, {"property": "defaultProps"}, {"property": "current"}]
       }
     ]
   },

@@ -1,0 +1,218 @@
+@import 'css/sass/mixins.scss';
+@import 'css/sass/screens.scss';
+
+.search__icon {
+  display: inline-block;
+  fill: var(--black);
+  cursor: pointer;
+  transition: var(--trans);
+
+  &:hover,
+  &:focus {
+    fill: var(--gold);
+  }
+
+  &:active {
+    fill: var(--gold);
+    fill-opacity: 0.5;
+  }
+
+  &--modal {
+    fill: var(--lightBeige);
+
+    &:hover,
+    &:focus {
+      fill: var(--lightBeige);
+    }
+
+    &:active {
+      fill: var(--lightBeige);
+      fill-opacity: 0.5;
+    }
+  }
+}
+
+.search__btn {
+  @include btn-reset;
+
+  &:focus,
+  &:hover {
+    & .search__icon {
+      fill: var(--gold);
+    }
+  }
+
+  &:active {
+    & .search__icon {
+      fill: var(--gold);
+      fill-opacity: 0.5;
+    }
+  }
+}
+
+.modal-search {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  &-enter {
+    top: 0;
+    right: 0;
+    display: block;
+    width: var(--modalSearchWidth);
+    height: 100vh;
+    background-color: var(--lightBeige);
+    transform: translateX(100%);
+  }
+
+  &-enter-active {
+    top: 0;
+    right: 0;
+    display: block;
+    width: var(--modalSearchWidth);
+    min-width: 230px;
+    max-width: 340px;
+    height: 100vh;
+    background-color: var(--lightBeige);
+    transform: translateX(0%);
+    transition: all var(--normalAnimation) ease-in-out;
+  }
+
+  &-enter-done {
+    top: 0;
+    right: 0;
+    display: block;
+    width: var(--modalSearchWidth);
+    min-width: 230px;
+    max-width: 340px;
+    height: 100vh;
+    background-color: var(--lightBeige);
+  }
+
+  &-exit {
+    top: 0;
+    right: 0;
+    display: block;
+    width: var(--modalSearchWidth);
+    min-width: 230px;
+    max-width: 340px;
+    height: 100vh;
+    transform: translateX(0%);
+    background-color: var(--lightBeige);
+  }
+
+  &-exit-active {
+    top: 0;
+    right: 0;
+    display: block;
+    width: var(--modalSearchWidth);
+    min-width: 230px;
+    max-width: 340px;
+    height: 100vh;
+    background-color: var(--lightBeige);
+    transform: translateX(100%);
+    transition: all var(--normalAnimation) ease-in-out;
+  }
+
+  &-exit-done {
+    top: 0;
+    right: 0;
+    display: block;
+    width: var(--modalSearchWidth);
+    height: 100vh;
+    background-color: var(--lightBeige);
+    transform: translateX(100%);
+  }
+}
+
+.modal-search__wrap {
+  width: 100%;
+  height: 100%;
+  padding: 31px;
+  box-sizing: border-box;
+}
+
+.modal-search__title {
+  @include subtitle;
+
+  font-size: 20px;
+}
+
+.modal-search__form {
+  @include form-reset;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.modal-search__label {
+  position: relative;
+  width: 100%;
+  height: 32px;
+}
+
+.modal-search__field {
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  border: 1px solid var(--greyNormal);
+  border-radius: 18px/50%;
+  height: 100%;
+  vertical-align: text-top;
+  outline: none;
+  transition: width var(--instantAnimation) ease-in-out;
+  transform-origin: right;
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+.modal-search__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+
+.modal-search__submit-btn {
+  @include btn-reset;
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--greyNormal);
+  transform: translateY(-50%);
+  transition: all var(--normalAnimation) ease-in-out;
+
+  &:hover {
+    background-color: var(--gold);
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .modal-search {
+    &-enter-active {
+      min-width: unset;
+      max-width: unset;
+    }
+
+    &-enter-done {
+      min-width: unset;
+      max-width: unset;
+    }
+
+    &-exit {
+      min-width: unset;
+      max-width: unset;
+    }
+
+    &-exit-active {
+      min-width: unset;
+      max-width: unset;
+    }
+  }
+}

@@ -6,13 +6,13 @@ import childrenPropTypes from 'proptypes/children.prop';
 import './Btn.scss';
 
 const Btn = props => {
-  const {isLink = false, path, children, className} = props;
+  const {isLink = false, path, className, children} = props;
   return isLink ? (
-    <Link to={path} className={className}>
+    <Link className={className} to={path}>
       {children}
     </Link>
   ) : (
-    <button type="button" className={className}>
+    <button className={className} type="button">
       {children}
     </button>
   );
@@ -20,8 +20,8 @@ const Btn = props => {
 
 Btn.propTypes = {
   isLink: PropTypes.bool.isRequired,
-  className: PropTypes.string,
   path: PropTypes.string,
+  className: PropTypes.string,
   children: childrenPropTypes,
 };
 

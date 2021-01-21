@@ -1,5 +1,8 @@
 import {useSelector} from 'react-redux';
 
-const useMenuState = () => useSelector(state => state.settings.menu);
+const selectMenu = state => state.settings.menu;
+const selectSearchState = state => state.settings.search;
 
-export default useMenuState;
+const useMenuState = () => useSelector(selectMenu);
+const useSearchState = () => useSelector(selectSearchState);
+export {useMenuState, useSearchState};

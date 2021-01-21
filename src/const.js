@@ -10,6 +10,7 @@ const AppRoute = {
   BESTSELLERS: '/bestsellers',
   DELIVERY: '/delivery',
   CONTACTS: '/contacts',
+  SEARCH: '/search',
 };
 
 const Width = {

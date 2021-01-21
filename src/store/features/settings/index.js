@@ -1,3 +1,3 @@
 export {default as settingsReducer} from './settingsReducer';
-export {default as useMenuState} from './selectors';
+export {useMenuState, useSearchState} from './selectors';
 export {default as useActions} from './actionCreators';

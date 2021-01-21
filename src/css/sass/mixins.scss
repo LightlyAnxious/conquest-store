@@ -78,3 +78,12 @@
   line-height: var(--titleHeight);
   color: var(--black);
 }
+
+@mixin subtitle {
+  margin: 0;
+  font-family: 'Playfair Display', 'Garamond', serif;
+  font-weight: 400;
+  font-size: var(--subTitleSize);
+  line-height: var(--subTitleHeight);
+  color: var(--black);
+}

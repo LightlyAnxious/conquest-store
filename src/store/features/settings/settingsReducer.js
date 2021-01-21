@@ -1,9 +1,11 @@
 import actionTypes from './actionTypes';
 
-const {TOGGLE_MENU} = actionTypes;
+const {TOGGLE_MENU, TOGGLE_SEARCH, SET_SEARCH_TERMS} = actionTypes;
 
 const initialState = {
   menu: false,
+  search: false,
+  searchTerms: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -12,6 +14,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         menu: action.payload,
+      };
+    case TOGGLE_SEARCH:
+      return {
+        ...state,
+        search: action.payload,
+      };
+    case SET_SEARCH_TERMS:
+      return {
+        ...state,
+        searchTerms: {...action.payload},
       };
 
     default:

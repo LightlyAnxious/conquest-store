@@ -27,6 +27,7 @@
   --contentHeight: 14px;
   --promoFont: 16px;
   --favoritesTop: 91px;
+  --modalSearchWidth: 21vw;
 }
 
 @media (max-width: 1260px) {
@@ -39,6 +40,7 @@
   :root {
     --titleSize: 27px;
     --titleHeight: 37px;
+    --modalSearchWidth: 40vw;
   }
 }
 
@@ -49,5 +51,6 @@
     --subTitleSize: 12px;
     --subTitleHeight: 14px;
     --promoFont: 12px;
+    --modalSearchWidth: 100vw;
   }
 }

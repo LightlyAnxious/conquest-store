@@ -22,4 +22,12 @@ const newsSizes = {
   mobile: 255,
 };
 
-export {promoSizes, bestsellersSizes, advantagesSizes, newsSizes};
+const modalItemSize = 150;
+
+export {
+  promoSizes,
+  bestsellersSizes,
+  advantagesSizes,
+  newsSizes,
+  modalItemSize,
+};
