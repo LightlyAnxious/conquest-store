@@ -2,6 +2,7 @@ const actionTypes = {
   TOGGLE_MENU: 'TOGGLE_MENU',
   TOGGLE_SEARCH: 'TOGGLE_SEARCH',
   SET_SEARCH_TERMS: 'SET_SEARCH_TERMS',
+  SET_SEARCH_VALUE: 'SET_SEARCH_VALUE',
 };
 
 export default actionTypes;

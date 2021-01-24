@@ -5,6 +5,7 @@ const {TOGGLE_MENU, TOGGLE_SEARCH, SET_SEARCH_TERMS} = actionTypes;
 const initialState = {
   menu: false,
   search: false,
+  searchValue: '',
   searchTerms: null,
 };
 

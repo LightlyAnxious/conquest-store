@@ -19,12 +19,9 @@ const SearchProvider = () => {
     setIsComponentVisible(!isOpened);
     toggleSearch(!isOpened);
   };
-
-  useEffect(() => toggleSearch(isComponentVisible), [
-    isComponentVisible,
-    toggleSearch,
-  ]);
-
+  /* eslint-disable */
+  useEffect(() => toggleSearch(isComponentVisible), [isComponentVisible]);
+  /* eslint-enable */
   return (
     <>
       <button
