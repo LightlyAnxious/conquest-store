@@ -1,5 +1,5 @@
 import React from 'react';
-import Btn from 'components/shared/Btn/Btn';
+import Btn from 'components/shared/Btn';
 import {AppRoute} from 'const';
 
 const PromoCollection = () => (
