@@ -1,3 +1,5 @@
+const filterByValue = () => {};
+
 const filterByTerms = (item, terms) => {
   let passedItem;
   if (!terms) {
