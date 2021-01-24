@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import watchesPropTypes from 'proptypes/watches.prop';
 import watchesMock from 'mocks/items.mock';
 import {useFilteredGoods} from 'store/features/shop/index';
@@ -16,6 +16,8 @@ const SearchForm = ({watches = watchesMock, onSearch = () => {}}) => {
   const handleSubmit = evt => {
     evt.preventDefault();
   };
+
+  useEffect(() => console.log(searchTerm));
 
   return (
     <form
